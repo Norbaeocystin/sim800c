@@ -35,6 +35,8 @@ fn main() -> Result<()> {
     // let msg = format!('AT+HTTPPARA="URL","www.sim.com"\r');
     sim.at_httppara_e("URL", HTTPPARA::S("google.com".to_string()));
     sim.at_httppara_e("REDIR", HTTPPARA::I(1))?;
+    // UA - user_agent
+    // sim.at_httppara_e("CONTENT",HTTPPARA::S("application/json".to_string()))?;
     info!("setting done");
     sim.at_httpaction_e(HTTP_ACTION::GET)?;
     info!("action invoked");

@@ -100,6 +100,7 @@ pub enum HTTP_ACTION {
     GET = 0,
     POST = 1,
     HEAD = 2,
+    DELETE = 3,
 }
 
 #[derive(Default, Debug, Eq, PartialEq)]

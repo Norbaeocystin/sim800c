@@ -9,6 +9,7 @@ Rust wrapper for sim800c serial communication.
 
 
 ### Literature: </br>
+[the most important at commands for serie 800](https://microchip.ua/simcom/2G/SIM800%20Series_AT%20Command%20Manual_V1.12.pdf)
 [SIM7028 NB-IoT examples](https://files.waveshare.com/wiki/SIM7028-NB-IoT-HAT/SIM7028%20NB-IoT%20HAT-Doc/SIM7028_Series_TCPIP_Application_Note_V1.04.pdf)<br>
 [user manual SIM800C](https://manuals.plus/usb-to-gsm-module/usb-to-gsm-module-lc-gsm-sim800c-2-manual#google_vignette)</br>
 [send sms via at commands](https://www.smssolutions.net/tutorials/gsm/sendsmsat/)</br>
