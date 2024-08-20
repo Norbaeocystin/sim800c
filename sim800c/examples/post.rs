@@ -41,9 +41,12 @@ fn main() -> Result<()> {
     sim.at_httppara_e("CONTENT",HTTPPARA::S("application/json".to_string()))?;
     info!("setting done");
     let post_data = "airSensors,sensor_id=TLM0201 temperature=73.97038159354763,humidity=35.23103248356096,co=0.48445310567793615 1630424257000000000";
-    sim.send_command(&format!("AT+HTTPDATA={},{}", post_data.as_bytes().len(), 10000));
+    sim.flush();
+    sim.send_command(&format!("AT+HTTPDATA={},{}\r", post_data.as_bytes().len(), 10000));
     sim.read(Some("DOWNLOAD"), 60_000, None);
+    info!("done download there");
     sim.port_opened.write_all(post_data.as_bytes());
+    // sim.port_opened.write_all(b"\r\n");
     sim.read(Some("OK"), 60_000, None);
     sim.at_httpaction_e(HTTP_ACTION::POST)?;
     info!("action invoked");
