@@ -21,9 +21,3 @@ Rust wrapper for sim800c serial communication.
 [sim7028 http example](https://files.waveshare.com/wiki/SIM7028-NB-IoT-HAT/SIM7028%20NB-IoT%20HAT-Doc/SIM7028_Series_HTTP(S)_Application_Note_V1.04.pdf)</br>
 [sim7028 tcp example](https://files.waveshare.com/wiki/SIM7028-NB-IoT-HAT/SIM7028%20NB-IoT%20HAT-Doc/SIM7028_Series_TCPIP_Application_Note_V1.04.pdf)</br>
 [wiki 800C](https://www.waveshare.com/wiki/SIM800C_GSM/GPRS_HAT)
-
-## Crate nmea:
-processing gps data 
-
-#### Literature: </br>
-[pynmea2](https://github.com/Knio/pynmea2)
