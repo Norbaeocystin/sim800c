@@ -1,0 +1,12 @@
+[package]
+name = "sim800c"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serialport = "4.5.0"
+log = "0.4.22"
+anyhow = "1.0.86"
+env_logger = { version = "0.10.0", features = [] }
