@@ -1,13 +1,15 @@
 
-Rust wrapper for sim800c serial communication.
+## Crate sim800c:
 
+Rust wrapper for sim800c serial communication.
+    
 ### TODO
 - [X] send sms
-- [x] send https get request
-- [ ] send post request
+- [X] send https get request
+- [X] send post request
 - [ ] send data  to influx v2 via api
-
-
+    
+    
 ### Literature: </br>
 [the most important at commands for serie 800](https://microchip.ua/simcom/2G/SIM800%20Series_AT%20Command%20Manual_V1.12.pdf)
 [SIM7028 NB-IoT examples](https://files.waveshare.com/wiki/SIM7028-NB-IoT-HAT/SIM7028%20NB-IoT%20HAT-Doc/SIM7028_Series_TCPIP_Application_Note_V1.04.pdf)<br>
@@ -19,3 +21,9 @@ Rust wrapper for sim800c serial communication.
 [sim7028 http example](https://files.waveshare.com/wiki/SIM7028-NB-IoT-HAT/SIM7028%20NB-IoT%20HAT-Doc/SIM7028_Series_HTTP(S)_Application_Note_V1.04.pdf)</br>
 [sim7028 tcp example](https://files.waveshare.com/wiki/SIM7028-NB-IoT-HAT/SIM7028%20NB-IoT%20HAT-Doc/SIM7028_Series_TCPIP_Application_Note_V1.04.pdf)</br>
 [wiki 800C](https://www.waveshare.com/wiki/SIM800C_GSM/GPRS_HAT)
+
+## Crate nmea:
+processing gps data 
+
+#### Literature: </br>
+[pynmea2](https://github.com/Knio/pynmea2)

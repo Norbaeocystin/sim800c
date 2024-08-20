@@ -1,2 +1,2 @@
 [workspace]
-members = ["sim800c"]
+members = ["sim800c","nmea"]
