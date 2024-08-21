@@ -30,8 +30,11 @@ fn main() -> Result<()>{
     } else {
         info!("gprs context already there {}", query);
     };
+    sim.flush();
+    info!("sending at+clbs");
     sim.send_command("AT+CLBS=1,1\r");
-    sim.read(Some("OK"),10_000, Some("+CLBS:") );
+    let out = sim.read(Some("OK"),10_000, Some("+CLBS:") );
+    info!("{}", out);
     // <ret_code>[,<latitude>,<longitude>,<acc>,<date>,<time>]
     sim.close_gprs_context()?;
     info!("closed gprs context");
