@@ -58,7 +58,7 @@ fn main() -> Result<()> {
     info!("{}", out);
     sim.at_httpterm()?;
     info!("closed connection");
-    // sim.close_gprs_context()?;
+    sim.close_gprs_context()?;
     info!("closed gprs context");
     Ok(())
 }

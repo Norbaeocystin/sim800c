@@ -30,3 +30,4 @@ AT+CUSD=1,"2" // use option 2
 [sim7028 http example](https://files.waveshare.com/wiki/SIM7028-NB-IoT-HAT/SIM7028%20NB-IoT%20HAT-Doc/SIM7028_Series_HTTP(S)_Application_Note_V1.04.pdf)</br>
 [sim7028 tcp example](https://files.waveshare.com/wiki/SIM7028-NB-IoT-HAT/SIM7028%20NB-IoT%20HAT-Doc/SIM7028_Series_TCPIP_Application_Note_V1.04.pdf)</br>
 [wiki 800C](https://www.waveshare.com/wiki/SIM800C_GSM/GPRS_HAT)
+[ lbs - position ](https://my.avnet.com/wcm/connect/5ddc2831-b698-44ac-92f5-50d79a14cb3f/Heracles-SIMCOM_GSM+Location_Application+Note_V1.02.pdf?MOD=AJPERES&CVID=m31n15G)
