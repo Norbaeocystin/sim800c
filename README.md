@@ -2,6 +2,13 @@
 ## Crate sim800c:
 
 Rust wrapper for sim800c serial communication.
+
+to check credit
+```
+AT+CUSD=1
+AT+CUSD=1,"*111#"
+AT+CUSD=1,"2" // use option 2
+```
     
 ### TODO
 - [X] send sms
