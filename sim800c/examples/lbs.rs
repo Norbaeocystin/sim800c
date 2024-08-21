@@ -5,6 +5,7 @@ use sim800c::sim800c::Sim800C;
 fn main() -> Result<()>{
     // other option - to get at+ceng=2 and approximate from the data
     // to stop at+ceng=1
+    env_logger::builder().filter_level(LevelFilter::Info).init();
     let mut sim = Sim800C::new(
         "/dev/ttyUSB0".to_string(),
         115_200,
