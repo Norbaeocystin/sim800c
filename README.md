@@ -14,6 +14,8 @@ AT+CUSD=1,"2" // use option 2
 - [X] send sms
 - [X] send https get request
 - [X] send post request
+- [ ] tcp/udp communication
+- [ ] bluetooth commands
 - [ ] send data  to influx v2 via api
     
     
