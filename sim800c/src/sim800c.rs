@@ -1,7 +1,6 @@
 use anyhow::{anyhow, Result};
-use log::{debug, error, info, warn};
-use serialport::{Error, ErrorKind, SerialPort};
-use std::fmt::format;
+use log::{debug, error, warn};
+use serialport::SerialPort;
 use std::io;
 use std::io::Write;
 use std::string::ToString;
@@ -20,7 +19,7 @@ impl Sim800C {
             .timeout(Duration::from_millis(timeout_ms))
             .open()
             .expect("Failed to open port");
-        port_opened.write_data_terminal_ready(true);
+        let _ = port_opened.write_data_terminal_ready(true);
         Self {
             apn,
             baudrate,
@@ -239,15 +238,14 @@ impl Sim800C {
     ///  Set parameters for HTTP session AT+HTTPPARA="CID",1 or AT+HTTPPARA="URL","www.sim.com"
     pub fn at_httppara_e(&mut self, key: &str, value: HTTPPARA) -> Result<()> {
         self.flush();
-        let mut msg = String::new();
-        match value {
+        let msg = match value {
             HTTPPARA::S(value) => {
-                msg = format!("AT+HTTPPARA=\"{}\",\"{}\"\r", key, value);
+                format!("AT+HTTPPARA=\"{}\",\"{}\"\r", key, value)
             }
             HTTPPARA::I(value) => {
-                msg = format!("AT+HTTPPARA=\"{}\",{}\r", key, value);
+                format!("AT+HTTPPARA=\"{}\",{}\r", key, value)
             }
-        }
+        };
         self.send_command(&msg);
         let out = self.read(Some("OK"), self.timeout_ms, None);
         if !out.ends_with("OK") {

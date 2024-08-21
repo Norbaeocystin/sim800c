@@ -1,5 +1,4 @@
-
-fn main(){
+fn main() {
     // AT+CGATT? 	Check GPRS attachment service status 	OK
     // AT+CIPMODE=1 	Set to transparent mode 	OK
     // AT+CSTT="CMNET" 	Set APN 	OK

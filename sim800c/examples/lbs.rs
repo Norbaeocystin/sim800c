@@ -1,8 +1,10 @@
 use anyhow::{anyhow, Result};
 use log::{info, LevelFilter};
-use sim800c::sim800c::{Sim800C},
+use sim800c::sim800c::Sim800C;
 
 fn main() {
+    // other option - to get at+ceng=2 and approximate from the data
+    // to stop at+ceng=1
     let mut sim = Sim800C::new(
         "/dev/ttyUSB0".to_string(),
         115_200,
@@ -32,26 +34,26 @@ fn main() {
     Ok(())
 }
 
-    // OK
-    // AT+SAPBR =3,1,”CONTYPE”,”GPRS”
-    // ERROR
-    // AT+SAPBR=1,1
-    // OK
-    // AT+SAPBR=2,1
-    //     +SAPBR: 1,1,"10.97.199.43"
-    //
-    // OK
-    // AT+CIPGSMLOC=1,1
-    //     +CIPGSMLOC: 0,0.000000,0.000000,2024/08/21,00:33:02
-    //
-    // OK
-    // AT+CIPGSMLOC=2,1
-    //     +CIPGSMLOC: 0,2024/08/21,00:33:19
-    //
-    // OK
-    // at+clbs=1,1
-    //     +CLBS: 0,-57.573456,-25.289178,550
-    //
-    // OK
-    // at+sapbr=0,1
-    // OK
+// OK
+// AT+SAPBR =3,1,”CONTYPE”,”GPRS”
+// ERROR
+// AT+SAPBR=1,1
+// OK
+// AT+SAPBR=2,1
+//     +SAPBR: 1,1,"10.97.199.43"
+//
+// OK
+// AT+CIPGSMLOC=1,1
+//     +CIPGSMLOC: 0,0.000000,0.000000,2024/08/21,00:33:02
+//
+// OK
+// AT+CIPGSMLOC=2,1
+//     +CIPGSMLOC: 0,2024/08/21,00:33:19
+//
+// OK
+// at+clbs=1,1
+//     +CLBS: 0,-57.573456,-25.289178,550
+//
+// OK
+// at+sapbr=0,1
+// OK

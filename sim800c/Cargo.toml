@@ -1,4 +1,3 @@
-workspace = { members = ["nmea"] }
 [package]
 name = "sim800c"
 version = "0.1.0"

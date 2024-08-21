@@ -1,6 +1,4 @@
-
-
-pub fn main(){
+pub fn main() {
     // AT+BTPOWER=1 	Turn on the Bluetooth power 	OK
     // AT+BTHOST? 	Query Bluetooth name and address 	Returns the bluetooth name and MAC address
     // AT+BTSCAN=1,10 	Search for nearby Bluetooth devices 	Returns the searched Bluetooth device information

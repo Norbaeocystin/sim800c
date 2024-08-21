@@ -1,7 +1,7 @@
-use std::io::Write;
 use anyhow::{anyhow, Result};
 use log::{info, LevelFilter};
 use sim800c::sim800c::{Sim800C, HTTPPARA, HTTP_ACTION};
+use std::io::Write;
 
 fn main() -> Result<()> {
     env_logger::builder().filter_level(LevelFilter::Info).init();
@@ -38,12 +38,16 @@ fn main() -> Result<()> {
     sim.at_httppara_e("URL", HTTPPARA::S("webhook.site".to_string()));
     sim.at_httppara_e("REDIR", HTTPPARA::I(1))?;
     // UA - user_agent
-    sim.at_httppara_e("CONTENT",HTTPPARA::S("application/json".to_string()))?;
+    sim.at_httppara_e("CONTENT", HTTPPARA::S("application/json".to_string()))?;
     // custom header adding Authorization header
     // "AT+HTTPPARA=\"USERDATA]\",\"Authorization: Bearer [My Token]\"\r\n"
     info!("setting done");
     let post_data = "airSensors,sensor_id=TLM0201 temperature=73.97038159354763,humidity=35.23103248356096,co=0.48445310567793615 1630424257000000000";
-    sim.send_command(&format!("AT+HTTPDATA={},{}\r", post_data.as_bytes().len(), 100000));
+    sim.send_command(&format!(
+        "AT+HTTPDATA={},{}\r",
+        post_data.as_bytes().len(),
+        100000
+    ));
     sim.read(Some("DOWNLOAD"), 60_000, None);
     sim.port_opened.write_all(post_data.as_bytes());
     sim.read(Some("OK"), 60_000, None);
